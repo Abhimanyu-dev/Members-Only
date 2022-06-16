@@ -1,0 +1,34 @@
+<article class="box">
+        <div class="media">
+            <figure class="image is-64x64">
+            </figure>
+        </div>
+        
+                
+        <div class="media-content">
+            <div class="content">
+
+                <strong><%= @post.title%></strong><br>
+                <% if user_signed_in? %>
+                 <small>@<%= @post.user.username %></small><br>
+                <% end %>
+                <p><%=@post.body%></p>
+            </div>
+
+            <% if user_signed_in? %>
+
+            <nav class="level">
+                <div class="level-left is-mobile">
+                    
+                    <% if current_user.username == @post.user.username %>
+                        <%= link_to edit_post_path(@post), class: 'level-item' do%>
+                        <span class="icon"><i class="fa fa-pencil" aria-hidden="true"></i></span>
+                        <% end %>
+                        <%= button_to 'Delete',post_path(@post), class: 'level-item', method: :delete%>
+                        
+                    <% end %>
+                </div>
+            </nav>
+            <% end %>
+        </div>
+    </article>
