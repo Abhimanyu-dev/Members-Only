@@ -10,19 +10,13 @@
   </head>
 
   <body>
-  	<nav class="navbar is-info">
+  	<nav class="navbar is-info" style="display:flex; flex-direction:row; justify-content:space-between;">
   		<div class="navbar-brand">
   		<%= link_to root_path, class: "navbar-item" do %>
   			<h1 class="title is-5">Members Only</h1>
   		<% end %>
-			<div class="navbar-burger burger" data-target="navbarExample">
-					<span></span>
-					<span></span>
-					<span></span>
-  		</div>
   	 </div>
-
-			<div id="navbarExample" class="navbar-menu">
+			<div class="navbar" >
 				<div class="navbar-end">
           <div class="navbar-item">
 					<div class="field is-grouped">
